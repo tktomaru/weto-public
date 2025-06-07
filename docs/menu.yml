@@ -1,5 +1,10 @@
 # public/menu.yml
 
+- title: トップページ
+  items:
+    - label: ホーム
+      route: /
+
 - title: Crypto / Security
   items:
     - label: AES Encrypt / Decrypt
