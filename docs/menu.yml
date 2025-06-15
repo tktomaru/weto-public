@@ -1,0 +1,55 @@
+- title: トップページ
+  items:
+    - label: ホーム
+      route: /
+
+- title: Crypto / Security
+  items:
+    - label: AES Encrypt / Decrypt
+      route: /encdec
+    - label: Hash Digest (SHA-256, SHA-3…)
+      route: /hash
+    - label: JWT Decode / Verify
+      route: /jwt
+    - label: Encode / Decode
+      route: /ed
+    - label: パスワード／乱数ジェネレータ
+      route: /password
+
+- title: Network
+  items:
+    - label: CIDR / サブネット計算
+      route: /cidr
+    - label: IP ⇔ PTR 逆引き (DNS over HTTPS)
+      route: /ptr
+
+- title: Dev Tools
+  items:
+    - label: JSON フォーマッタ / バリデータ
+      route: /json
+    - label: YAML ⇔ JSON
+      route: /yaml-json
+    - label: CSV ⇔ JSON
+      route: /csv-json
+    - label: Regex テスター
+      route: /regex
+    - label: UUID / ULID 生成
+      route: /uuid
+    - label: Markdown → HTML
+      route: /markdown
+    - label: Markdown スライドデッキ
+      route: /markdown-slide-deck
+    - label: QRコード生成
+      route: /qr
+    - label: VB コード整形
+      route: /vb-formatter
+    - label: Dockerfile アナライザ
+      route: /dockerfile-analyzer
+    - label: データ可視化
+      route: /data-visualizer
+    - label: JSON Diff / Merge
+      route: /json-diff-merge
+    - label: ガントチャート
+      route: /gantt-chart
+    - label: Flashcard SRS
+      route: /flashcard-srs
