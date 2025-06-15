@@ -1,55 +1,55 @@
-- title: ƒgƒbƒvƒy[ƒW
+ï»¿- title: ãƒˆãƒƒãƒ—ãƒšãƒ¼ã‚¸
   items:
-    - label: ƒz[ƒ€
+    - label: ãƒ›ãƒ¼ãƒ 
       route: /
 
 - title: Crypto / Security
   items:
     - label: AES Encrypt / Decrypt
       route: /encdec
-    - label: Hash Digest (SHA-256, SHA-3c)
+    - label: Hash Digest (SHA-256, SHA-3â€¦)
       route: /hash
     - label: JWT Decode / Verify
       route: /jwt
     - label: Encode / Decode
       route: /ed
-    - label: ƒpƒXƒ[ƒh^—”ƒWƒFƒlƒŒ[ƒ^
+    - label: ãƒ‘ã‚¹ãƒ¯ãƒ¼ãƒ‰ï¼ä¹±æ•°ã‚¸ã‚§ãƒãƒ¬ãƒ¼ã‚¿
       route: /password
 
 - title: Network
   items:
-    - label: CIDR / ƒTƒuƒlƒbƒgŒvZ
+    - label: CIDR / ã‚µãƒ–ãƒãƒƒãƒˆè¨ˆç®—
       route: /cidr
-    - label: IP Ì PTR ‹tˆø‚« (DNS over HTTPS)
+    - label: IP â‡” PTR é€†å¼•ã (DNS over HTTPS)
       route: /ptr
 
 - title: Dev Tools
   items:
-    - label: JSON ƒtƒH[ƒ}ƒbƒ^ / ƒoƒŠƒf[ƒ^
+    - label: JSON ãƒ•ã‚©ãƒ¼ãƒãƒƒã‚¿ / ãƒãƒªãƒ‡ãƒ¼ã‚¿
       route: /json
-    - label: YAML Ì JSON
+    - label: YAML â‡” JSON
       route: /yaml-json
-    - label: CSV Ì JSON
+    - label: CSV â‡” JSON
       route: /csv-json
-    - label: Regex ƒeƒXƒ^[
+    - label: Regex ãƒ†ã‚¹ã‚¿ãƒ¼
       route: /regex
-    - label: UUID / ULID ¶¬
+    - label: UUID / ULID ç”Ÿæˆ
       route: /uuid
-    - label: Markdown ¨ HTML
+    - label: Markdown â†’ HTML
       route: /markdown
-    - label: Markdown ƒXƒ‰ƒCƒhƒfƒbƒL
+    - label: Markdown ã‚¹ãƒ©ã‚¤ãƒ‰ãƒ‡ãƒƒã‚­
       route: /markdown-slide-deck
-    - label: QRƒR[ƒh¶¬
+    - label: QRã‚³ãƒ¼ãƒ‰ç”Ÿæˆ
       route: /qr
-    - label: VB ƒR[ƒh®Œ`
+    - label: VB ã‚³ãƒ¼ãƒ‰æ•´å½¢
       route: /vb-formatter
-    - label: Dockerfile ƒAƒiƒ‰ƒCƒU
+    - label: Dockerfile ã‚¢ãƒŠãƒ©ã‚¤ã‚¶
       route: /dockerfile-analyzer
-    - label: ƒf[ƒ^‰Â‹‰»
+    - label: ãƒ‡ãƒ¼ã‚¿å¯è¦–åŒ–
       route: /data-visualizer
     - label: JSON Diff / Merge
       route: /json-diff-merge
-    - label: ƒKƒ“ƒgƒ`ƒƒ[ƒg
+    - label: ã‚¬ãƒ³ãƒˆãƒãƒ£ãƒ¼ãƒˆ
       route: /gantt-chart
     - label: Flashcard SRS
       route: /flashcard-srs
