@@ -53,3 +53,17 @@
       route: /gantt-chart
     - label: Flashcard SRS
       route: /flashcard-srs
+    - label: Redmine テーブル整形
+      route: /redmine-table-formatter
+    - label: 連番生成
+      route: /serial-number-generator
+    - label: Cronパーサー
+      route: /cron-parser
+    - label: ダミーテキスト生成
+      route: /dummy-text-generator
+    - label: 文字列検査・変換
+      route: /text-inspector
+    - label: Unixタイムスタンプ変換
+      route: /unix-timestamp
+    - label: 基数変換ツール
+      route: /base-converter
