@@ -69,3 +69,5 @@
       route: /base-converter
     - label: mdからTextile変換ツール
       route: /textile-converter
+    - label: htmlからTextile変換ツール
+      route: /html-textile-converter
