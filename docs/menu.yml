@@ -68,6 +68,6 @@
     - label: 基数変換ツール
       route: /base-converter
     - label: mdからTextile変換ツール
-      route: /textile-converter
+      route: /md-to-textile
     - label: htmlからTextile変換ツール
-      route: /html-textile-converter
+      route: /html-to-textile
