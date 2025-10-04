@@ -27,6 +27,8 @@
   items:
     - label: JSON フォーマッタ / バリデータ
       route: /json
+    - label: Javascript フォーマッタ / バリデータ
+      route: /jsFormatter
     - label: YAML ⇔ JSON
       route: /yaml-json
     - label: CSV ⇔ JSON
