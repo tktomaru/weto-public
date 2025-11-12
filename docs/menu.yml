@@ -79,3 +79,5 @@
       route: /qiita-to-textile
     - label: ログからTextile変換ツール
       route: /log-to-textile
+    - label: curl解析ツール
+      route: /curl-analyzer
