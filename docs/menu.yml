@@ -73,5 +73,7 @@
       route: /base-converter
     - label: mdからTextile変換ツール
       route: /md-to-textile
-    - label: htmlからTextile変換ツール
+    - label: WinMergeからTextile変換ツール
       route: /html-to-textile
+    - label: QiitaからTextile変換ツール
+      route: /qiita-to-textile
