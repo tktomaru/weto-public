@@ -81,3 +81,5 @@
       route: /log-to-textile
     - label: curl解析ツール
       route: /curl-analyzer
+    - label: OGP
+      route: /ogp
