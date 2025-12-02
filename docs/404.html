@@ -1,15 +1,30 @@
 <!DOCTYPE html>
-<html lang="ja">
-<head>
-  <meta charset="utf-8">
-  <title>weto</title>
-  <meta http-equiv="refresh" content="0; url=/">
-  <script>
-    // Redirect to home page with hash router
-    window.location.href = '/';
-  </script>
-</head>
-<body>
-  <p>Redirecting to <a href="/">WETO - WebTools</a>...</p>
-</body>
+<html>
+  <head>
+    <meta charset="utf-8" />
+    <title>Redirecting...</title>
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        // segmentCount はリポジトリ配下かどうかで変えます
+        // カスタムドメイン直下なら 0 のままでOK
+        var segmentCount = 0;
+
+        var pathSegmentsToKeep = l.pathname.split('/').slice(0, 1 + segmentCount).join('/');
+        var pathSegmentsToRedirect = l.pathname.slice(1).split('/').slice(segmentCount).join('/');
+
+        l.replace(
+          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+          pathSegmentsToKeep + '/?/' +
+          pathSegmentsToRedirect.replace(/\//g, '~and~') +
+          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+          l.hash
+        );
+      }(window.location));
+    </script>
+  </head>
+  <body>
+    <p>Redirecting...</p>
+  </body>
 </html>
