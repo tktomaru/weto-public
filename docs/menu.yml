@@ -31,6 +31,8 @@
       route: /json
     - label: Javascript フォーマッタ / バリデータ
       route: /jsFormatter
+    - label: Scala フォーマッタ / バリデータ
+      route: /scalaFormatter
     - label: YAML ⇔ JSON
       route: /yaml-json
     - label: CSV ⇔ JSON
@@ -83,4 +85,5 @@
       route: /curl-analyzer
     - label: 画像生成
       route: /image/top
+      
       
