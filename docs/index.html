@@ -1,78 +1,89 @@
 <!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <link rel="icon" type="image/png" sizes="32x32" href="./vite32.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="./vite16.png" />
+    <link rel="shortcut icon" href="./vite.png" />
+    <link rel="apple-touch-icon" sizes="180x180" href="./vite.png" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
+    />
 
-<head>
-  <meta charset="UTF-8" />
-  <link rel="icon" type="image/png" sizes="32x32" href="./vite32.png" />
-  <link rel="icon" type="image/png" sizes="16x16" href="./vite16.png" />
-  <link rel="shortcut icon" href="./vite.png" />
-  <link rel="apple-touch-icon" sizes="180x180" href="./vite.png" />
-  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="Weto：Webツールサイト" />
+    <meta property="og:site_name" content="weto" />
+    <meta property="og:description" content="Weto：Webツールサイト" />
+    <meta property="og:image" content="https://weto.tukutano.jp/images/ogp/ogp.png" />
+    <meta property="og:url" content="https://weto.tukutano.jp/" />
+    <meta name="twitter:card" content="summary_large_image" />
 
-  <meta property="og:type" content="website" />
-  <meta property="og:title" content="Weto：Webツールサイト" />
-  <meta property="og:site_name" content="weto" />
-  <meta property="og:description" content='Weto：Webツールサイト' />
-  <meta property="og:image" content="https://weto.tukutano.jp/images/ogp/ogp.png" />
-  <meta property="og:url" content="https://weto.tukutano.jp/" />
-  <meta name="twitter:card" content="summary_large_image" />
+    <title>weto</title>
 
-  <title>weto</title>
     <!-- GitHub Pages SPA redirect script -->
     <script type="text/javascript">
       // Single Page Apps for GitHub Pages
       // MIT License
       // https://github.com/rafgraph/spa-github-pages
-      (function(l) {
-        if (l.search[1] === '/' ) {
-          var decoded = l.search.slice(1).split('&').map(function(s) { 
-            return s.replace(/~and~/g, '&')
-          }).join('?');
-          window.history.replaceState(null, null,
-              l.pathname.slice(0, -1) + decoded + l.hash
+      (function (l) {
+        // 例: https://weto.tukutano.jp/?/image~and~create~and~500~and~...
+        if (l.search[1] === "/") {
+          var decoded = l.search
+            .slice(1)
+            .split("&")
+            .map(function (s) {
+              return s.replace(/~and~/g, "&");
+            })
+            .join("?");
+
+          window.history.replaceState(
+            null,
+            null,
+            l.pathname.slice(0, -1) + decoded + l.hash,
           );
         }
-      }(window.location))
+      })(window.location);
     </script>
-    <script>
+
+    <!-- /image&create&... を /image/create/... に変換するスクリプト -->
+    <script type="text/javascript">
       (function () {
         var l = window.location;
         var path = l.pathname; // 例: "/image&create&500&500&jpg&UUID&"
 
-        // "/image&..." 形式のときだけ処理する
         if (path.startsWith("/image&")) {
-          // 先頭の "/" を除いて "&" で分割 → 空文字は除去
-          var parts = path.slice(1).split("&").filter(function (p) {
-            return p.length > 0;
-          });
-          // 期待する形式: ["image", "create", "500", "500", "jpg", "UUID"]
+          var parts = path
+            .slice(1) // 先頭の "/" を除く
+            .split("&")
+            .filter(function (p) {
+              return p.length > 0;
+            });
 
-          if (parts.length >= 6) {
-            // 最初の 6 要素をパスとして使う（7個目以降があれば任意で連結してもよい）
+          // ["image", "create", "500", "500", "jpg", "UUID"] を期待
+          if (parts.length >= 6 && parts[0] === "image") {
             var mainParts = parts.slice(0, 6);
             var newPath = "/" + mainParts.join("/") + "/";
 
-            // クエリはそのまま維持、ハッシュも維持
             var newUrl = l.origin + newPath + l.search + l.hash;
 
-            // URL を書き換え（リロードなし） → 以降は SPA のルーターが newPath を解釈
+            // URL だけ書き換え（リロードなし）
             window.history.replaceState(null, "", newUrl);
           }
         }
       })();
-</script>
-  <!-- End Single Page Apps for GitHub Pages -->
-  <script type="module" crossorigin src="./assets/index-Dx5vHpi8.js"></script>
-  <link rel="modulepreload" crossorigin href="./assets/markdown-VxYh_WmU.js">
-  <link rel="modulepreload" crossorigin href="./assets/react-Dc2m62Hd.js">
-  <link rel="modulepreload" crossorigin href="./assets/crypto-DW8Bub87.js">
-  <link rel="modulepreload" crossorigin href="./assets/mermaid-CmGy1z77.js">
-  <link rel="stylesheet" crossorigin href="./assets/markdown-BfC0goYb.css">
-  <link rel="stylesheet" crossorigin href="./assets/index-DAEKUoZ2.css">
-</head>
+    </script>
+    <!-- End Single Page Apps for GitHub Pages -->
+    <script type="module" crossorigin src="./assets/index-Zk_-8eeU.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/markdown-VxYh_WmU.js">
+    <link rel="modulepreload" crossorigin href="./assets/react-Dc2m62Hd.js">
+    <link rel="modulepreload" crossorigin href="./assets/crypto-DW8Bub87.js">
+    <link rel="modulepreload" crossorigin href="./assets/mermaid-CmGy1z77.js">
+    <link rel="stylesheet" crossorigin href="./assets/markdown-BfC0goYb.css">
+    <link rel="stylesheet" crossorigin href="./assets/index-DAEKUoZ2.css">
+  </head>
 
-<body>
-  <div id="root"></div>
-</body>
-
+  <body>
+    <div id="root"></div>
+  </body>
 </html>
