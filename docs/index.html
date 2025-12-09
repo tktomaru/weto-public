@@ -34,9 +34,35 @@
         }
       }(window.location))
     </script>
+    <script>
+      (function () {
+        var l = window.location;
+        var path = l.pathname; // 例: "/image&create&500&500&jpg&UUID&"
 
+        // "/image&..." 形式のときだけ処理する
+        if (path.startsWith("/image&")) {
+          // 先頭の "/" を除いて "&" で分割 → 空文字は除去
+          var parts = path.slice(1).split("&").filter(function (p) {
+            return p.length > 0;
+          });
+          // 期待する形式: ["image", "create", "500", "500", "jpg", "UUID"]
+
+          if (parts.length >= 6) {
+            // 最初の 6 要素をパスとして使う（7個目以降があれば任意で連結してもよい）
+            var mainParts = parts.slice(0, 6);
+            var newPath = "/" + mainParts.join("/") + "/";
+
+            // クエリはそのまま維持、ハッシュも維持
+            var newUrl = l.origin + newPath + l.search + l.hash;
+
+            // URL を書き換え（リロードなし） → 以降は SPA のルーターが newPath を解釈
+            window.history.replaceState(null, "", newUrl);
+          }
+        }
+      })();
+</script>
   <!-- End Single Page Apps for GitHub Pages -->
-  <script type="module" crossorigin src="./assets/index-_BAXrL-N.js"></script>
+  <script type="module" crossorigin src="./assets/index-Dx5vHpi8.js"></script>
   <link rel="modulepreload" crossorigin href="./assets/markdown-VxYh_WmU.js">
   <link rel="modulepreload" crossorigin href="./assets/react-Dc2m62Hd.js">
   <link rel="modulepreload" crossorigin href="./assets/crypto-DW8Bub87.js">
