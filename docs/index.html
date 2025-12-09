@@ -18,31 +18,22 @@
   <meta name="twitter:card" content="summary_large_image" />
 
   <title>weto</title>
-  <!-- Start Single Page Apps for GitHub Pages -->
-  <script>
-    (function () {
-      var l = window.location;
-
-      // 例: https://weto.tukutano.jp/?/image~and~create~and~500~and~500~and~jpg~and~XXXX~and~
-      if (l.search && l.search.indexOf("?/") === 1) {
-        // "?/..." → "/..." 部分を取り出す
-        var path = l.search.slice(2); // 先頭の "?/" を除く
-
-        // "~and~" 区切りを "/" に戻す
-        var segments = path.split("~and~").filter(Boolean); // 最後の空要素を除去
-        var newPath = "/" + segments.join("/");
-
-        // 新しい URL を組み立て（クエリは捨てて、ハッシュだけ維持）
-        var newUrl =
-          l.origin +
-          newPath +
-          l.hash;
-
-        // 履歴を書き換え → 以降は React Router 等が /image/create/... として解釈
-        window.history.replaceState(null, "", newUrl);
-      }
-    })();
-  </script>
+    <!-- GitHub Pages SPA redirect script -->
+    <script type="text/javascript">
+      // Single Page Apps for GitHub Pages
+      // MIT License
+      // https://github.com/rafgraph/spa-github-pages
+      (function(l) {
+        if (l.search[1] === '/' ) {
+          var decoded = l.search.slice(1).split('&').map(function(s) { 
+            return s.replace(/~and~/g, '&')
+          }).join('?');
+          window.history.replaceState(null, null,
+              l.pathname.slice(0, -1) + decoded + l.hash
+          );
+        }
+      }(window.location))
+    </script>
 
   <!-- End Single Page Apps for GitHub Pages -->
   <script type="module" crossorigin src="./assets/index-BRbpkwAl.js"></script>

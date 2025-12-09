@@ -1,42 +1,42 @@
 <!DOCTYPE html>
 <html>
-  <head>
-    <meta charset="utf-8" />
-    
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Weto：Webツールサイト_404" />
-    <meta property="og:site_name" content="weto" />
-    <meta
-      property="og:description"
-      content='特殊文字テスト404: &amp; &lt; &gt; &quot; &#39; ! # $ % ( ) * + , - . / : ; = ? @ [ ] ^ _ { | } ~'
-    />
-    <meta property="og:image" content="https://weto.tukutano.jp/images/ogp/0001.png" />
-    <meta property="og:url" content="https://weto.tukutano.jp/ogp" />
-    <meta name="twitter:card" content="summary_large_image" />
 
-    <title>Redirecting...</title>
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // https://github.com/rafgraph/spa-github-pages
-      (function(l) {
-        // segmentCount はリポジトリ配下かどうかで変えます
-        // カスタムドメイン直下なら 0 のままでOK
-        var segmentCount = 0;
+<head>
+  <meta charset="utf-8" />
 
-        var pathSegmentsToKeep = l.pathname.split('/').slice(0, 1 + segmentCount).join('/');
-        var pathSegmentsToRedirect = l.pathname.slice(1).split('/').slice(segmentCount).join('/');
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Weto：Webツールサイト" />
+  <meta property="og:site_name" content="weto" />
+  <meta property="og:description" content='Weto：Webツールサイト' />
+  <meta property="og:image" content="https://weto.tukutano.jp/images/ogp/ogp.png" />
+  <meta property="og:url" content="https://weto.tukutano.jp/ogp" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-        l.replace(
-          l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
-          pathSegmentsToKeep + '/?/' +
-          pathSegmentsToRedirect.replace(/\//g, '~and~') +
-          (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
-          l.hash
-        );
-      }(window.location));
-    </script>
-  </head>
-  <body>
-    <p>Redirecting...</p>
-  </body>
+  <title>Redirecting...</title>
+  <script type="text/javascript">
+    // Single Page Apps for GitHub Pages
+    // https://github.com/rafgraph/spa-github-pages
+    (function (l) {
+      // segmentCount はリポジトリ配下かどうかで変えます
+      // カスタムドメイン直下なら 0 のままでOK
+      var segmentCount = 0;
+
+      var pathSegmentsToKeep = l.pathname.split('/').slice(0, 1 + segmentCount).join('/');
+      var pathSegmentsToRedirect = l.pathname.slice(1).split('/').slice(segmentCount).join('/');
+
+      l.replace(
+        l.protocol + '//' + l.hostname + (l.port ? ':' + l.port : '') +
+        pathSegmentsToKeep + '/?/' +
+        pathSegmentsToRedirect.replace(/\//g, '~and~') +
+        (l.search ? '&' + l.search.slice(1).replace(/&/g, '~and~') : '') +
+        l.hash
+      );
+    }(window.location));
+  </script>
+</head>
+
+<body>
+  <p>Redirecting...</p>
+</body>
+
 </html>
