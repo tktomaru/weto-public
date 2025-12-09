@@ -1,89 +1,93 @@
 <!doctype html>
 <html lang="en">
-  <head>
-    <meta charset="UTF-8" />
-    <link rel="icon" type="image/png" sizes="32x32" href="./vite32.png" />
-    <link rel="icon" type="image/png" sizes="16x16" href="./vite16.png" />
-    <link rel="shortcut icon" href="./vite.png" />
-    <link rel="apple-touch-icon" sizes="180x180" href="./vite.png" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes"
-    />
 
-    <meta property="og:type" content="website" />
-    <meta property="og:title" content="Weto：Webツールサイト" />
-    <meta property="og:site_name" content="weto" />
-    <meta property="og:description" content="Weto：Webツールサイト" />
-    <meta property="og:image" content="https://weto.tukutano.jp/images/ogp/ogp.png" />
-    <meta property="og:url" content="https://weto.tukutano.jp/" />
-    <meta name="twitter:card" content="summary_large_image" />
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/png" sizes="32x32" href="./vite32.png" />
+  <link rel="icon" type="image/png" sizes="16x16" href="./vite16.png" />
+  <link rel="shortcut icon" href="./vite.png" />
+  <link rel="apple-touch-icon" sizes="180x180" href="./vite.png" />
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=5, user-scalable=yes" />
 
-    <title>weto</title>
+  <meta property="og:type" content="website" />
+  <meta property="og:title" content="Weto：Webツールサイト" />
+  <meta property="og:site_name" content="weto" />
+  <meta property="og:description" content="Weto：Webツールサイト" />
+  <meta property="og:image" content="https://weto.tukutano.jp/images/ogp/ogp.png" />
+  <meta property="og:url" content="https://weto.tukutano.jp/" />
+  <meta name="twitter:card" content="summary_large_image" />
 
-    <!-- GitHub Pages SPA redirect script -->
-    <script type="text/javascript">
-      // Single Page Apps for GitHub Pages
-      // MIT License
-      // https://github.com/rafgraph/spa-github-pages
-      (function (l) {
-        // 例: https://weto.tukutano.jp/?/image~and~create~and~500~and~...
-        if (l.search[1] === "/") {
-          var decoded = l.search
-            .slice(1)
+  <title>weto</title>
+
+  <!-- GitHub Pages SPA redirect script -->
+  <script type="text/javascript">
+    (function (l) {
+      // 例: https://weto.tukutano.jp/?/image~and~create~and~500~and~...
+      if (l.search[1] === "/") {
+        var searchRest = l.search.slice(1); // "/image~and~create~and~500" など
+
+        var decoded;
+        if (searchRest.indexOf("~and~") !== -1) {
+          // ★ 旧来の /path/to をエンコードしたパターンだけをデコード
+          decoded = searchRest
             .split("&")
             .map(function (s) {
               return s.replace(/~and~/g, "&");
             })
             .join("?");
-
-          window.history.replaceState(
-            null,
-            null,
-            l.pathname.slice(0, -1) + decoded + l.hash,
-          );
+        } else {
+          // ★ "~and~" を含まない場合（今回の /image&create&...）は、そのまま path 扱いにする
+          decoded = searchRest;
         }
-      })(window.location);
-    </script>
 
-    <!-- /image&create&... を /image/create/... に変換するスクリプト -->
-    <script type="text/javascript">
-      (function () {
-        var l = window.location;
-        var path = l.pathname; // 例: "/image&create&500&500&jpg&UUID&"
+        window.history.replaceState(
+          null,
+          null,
+          l.pathname.slice(0, -1) + decoded + l.hash,
+        );
+      }
+    })(window.location);
+  </script>
 
-        if (path.startsWith("/image&")) {
-          var parts = path
-            .slice(1) // 先頭の "/" を除く
-            .split("&")
-            .filter(function (p) {
-              return p.length > 0;
-            });
+  <!-- /image&create&... を /image/create/... に変換するスクリプト -->
+  <script type="text/javascript">
+    (function () {
+      var l = window.location;
+      var path = l.pathname; // 例: "/image&create&500&500&jpg&UUID&"
 
-          // ["image", "create", "500", "500", "jpg", "UUID"] を期待
-          if (parts.length >= 6 && parts[0] === "image") {
-            var mainParts = parts.slice(0, 6);
-            var newPath = "/" + mainParts.join("/") + "/";
+      if (path.startsWith("/image&")) {
+        var parts = path
+          .slice(1) // 先頭の "/" を除く
+          .split("&")
+          .filter(function (p) {
+            return p.length > 0;
+          });
 
-            var newUrl = l.origin + newPath + l.search + l.hash;
+        // ["image", "create", "500", "500", "jpg", "UUID"] を期待
+        if (parts.length >= 6 && parts[0] === "image") {
+          var mainParts = parts.slice(0, 6);
+          var newPath = "/" + mainParts.join("/") + "/";
 
-            // URL だけ書き換え（リロードなし）
-            window.history.replaceState(null, "", newUrl);
-          }
+          var newUrl = l.origin + newPath + l.search + l.hash;
+
+          // URL だけ書き換え（リロードなし）
+          window.history.replaceState(null, "", newUrl);
         }
-      })();
-    </script>
-    <!-- End Single Page Apps for GitHub Pages -->
-    <script type="module" crossorigin src="./assets/index-_BAXrL-N.js"></script>
-    <link rel="modulepreload" crossorigin href="./assets/markdown-VxYh_WmU.js">
-    <link rel="modulepreload" crossorigin href="./assets/react-Dc2m62Hd.js">
-    <link rel="modulepreload" crossorigin href="./assets/crypto-DW8Bub87.js">
-    <link rel="modulepreload" crossorigin href="./assets/mermaid-CmGy1z77.js">
-    <link rel="stylesheet" crossorigin href="./assets/markdown-BfC0goYb.css">
-    <link rel="stylesheet" crossorigin href="./assets/index-DAEKUoZ2.css">
-  </head>
+      }
+    })();
+  </script>
+  <!-- End Single Page Apps for GitHub Pages -->
+  <script type="module" crossorigin src="./assets/index-_BAXrL-N.js"></script>
+  <link rel="modulepreload" crossorigin href="./assets/markdown-VxYh_WmU.js">
+  <link rel="modulepreload" crossorigin href="./assets/react-Dc2m62Hd.js">
+  <link rel="modulepreload" crossorigin href="./assets/crypto-DW8Bub87.js">
+  <link rel="modulepreload" crossorigin href="./assets/mermaid-CmGy1z77.js">
+  <link rel="stylesheet" crossorigin href="./assets/markdown-BfC0goYb.css">
+  <link rel="stylesheet" crossorigin href="./assets/index-DAEKUoZ2.css">
+</head>
 
-  <body>
-    <div id="root"></div>
-  </body>
+<body>
+  <div id="root"></div>
+</body>
+
 </html>
