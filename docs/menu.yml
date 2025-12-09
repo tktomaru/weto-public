@@ -81,5 +81,6 @@
       route: /log-to-textile
     - label: curl解析ツール
       route: /curl-analyzer
-    - label: OGP
-      route: /ogp
+    - label: 画像生成
+      route: /image/top
+      
