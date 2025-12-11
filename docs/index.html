@@ -75,6 +75,14 @@
 
           // URL だけ書き換え（リロードなし）
           window.history.replaceState(null, "", newUrl);
+        } else if (parts.length >= 2 && parts[0] === "image") {
+          var mainParts = parts.slice(0, 2);
+          var newPath = "/" + mainParts.join("/") + "/";
+
+          var newUrl = l.origin + newPath + l.search + l.hash;
+
+          // URL だけ書き換え（リロードなし）
+          window.history.replaceState(null, "", newUrl);
         }
       }
     })();
