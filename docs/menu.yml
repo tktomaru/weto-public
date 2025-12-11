@@ -85,5 +85,8 @@
       route: /curl-analyzer
     - label: 画像生成
       route: /image/top
+    - label: 画像圧縮
+      route: /image/compress
+      
       
       
