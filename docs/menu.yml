@@ -3,90 +3,125 @@
     - label: ホーム
       route: /
 
-- title: Crypto / Security
+- title: セキュリティ / 暗号
   items:
-    - label: AES Encrypt / Decrypt
+    - label: AES 暗号化 / 復号
       route: /encdec
-    - label: Hash Digest (SHA-256, SHA-3…)
+    - label: ハッシュ生成 (SHA-256 / SHA-3)
       route: /hash
-    - label: JWT Decode / Verify
+    - label: JWT デコード / 検証
       route: /jwt
-    - label: Encode / Decode
-      route: /ed
-    - label: パスワード／乱数ジェネレータ
+    - label: パスワード生成
       route: /password
-    - label: 暗号・復号検証
+    - label: bcrypt 生成 / 照合
       route: /bcrypt
 
-- title: Network
+- title: ネットワーク
   items:
     - label: CIDR / サブネット計算
       route: /cidr
-    - label: IP ⇔ PTR 逆引き (DNS over HTTPS)
+    - label: PTR 逆引き (DoH)
       route: /ptr
 
-- title: Dev Tools
+- title: データ / 形式変換
   items:
     - label: JSON フォーマッタ / バリデータ
       route: /json
-    - label: Javascript フォーマッタ / バリデータ
-      route: /jsFormatter
-    - label: Scala フォーマッタ / バリデータ
-      route: /scalaFormatter
-    - label: YAML ⇔ JSON
+    - label: YAML ⇄ JSON
       route: /yaml-json
-    - label: CSV ⇔ JSON
+    - label: CSV ⇄ JSON
       route: /csv-json
-    - label: Regex テスター
-      route: /regex
-    - label: UUID / ULID 生成
-      route: /uuid
-    - label: Markdown → HTML
-      route: /markdown
-    - label: Markdown スライドデッキ
-      route: /markdown-slide-deck
-    - label: QRコード生成
-      route: /qr
-    - label: VB コード整形
-      route: /vb-formatter
-    - label: Dockerfile アナライザ
-      route: /dockerfile-analyzer
-    - label: データ可視化
-      route: /data-visualizer
     - label: JSON Diff / Merge
       route: /json-diff-merge
-    - label: ガントチャート
-      route: /gantt-chart
-    - label: Flashcard SRS
-      route: /flashcard-srs
+    - label: データ可視化
+      route: /data-visualizer
     - label: Redmine テーブル整形
       route: /redmine-table-formatter
-    - label: 連番生成
-      route: /serial-number-generator
-    - label: Cronパーサー
-      route: /cron-parser
-    - label: ダミーテキスト生成
-      route: /dummy-text-generator
+
+- title: 文字列 / 時刻 / 生成
+  items:
+    - label: エンコード / デコード (Base64/URL/HTML)
+      route: /ed
     - label: 文字列検査・変換
       route: /text-inspector
     - label: Unixタイムスタンプ変換
       route: /unix-timestamp
-    - label: 基数変換ツール
+    - label: Cron パーサー
+      route: /cron-parser
+    - label: 基数変換
       route: /base-converter
-    - label: mdからTextile変換ツール
-      route: /md-to-textile
-    - label: WinMergeからTextile変換ツール
-      route: /html-to-textile
-    - label: QiitaからTextile変換ツール
-      route: /qiita-to-textile
-    - label: ログからTextile変換ツール
-      route: /log-to-textile
-    - label: curl解析ツール
+    - label: UUID / ULID 生成
+      route: /uuid
+    - label: 連番生成
+      route: /serial-number-generator
+    - label: ダミーテキスト生成
+      route: /dummy-text-generator
+
+- title: 開発支援 / 解析
+  items:
+    - label: Regex テスター
+      route: /regex
+    - label: JavaScript フォーマッタ
+      route: /jsFormatter
+    - label: Scala フォーマッタ
+      route: /scalaFormatter
+    - label: VB フォーマッタ
+      route: /vb-formatter
+    - label: Dockerfile 解析
+      route: /dockerfile-analyzer
+    - label: curl 解析
       route: /curl-analyzer
+
+- title: ドキュメント / 変換
+  items:
+    - label: Markdown → HTML
+      route: /markdown
+    - label: Markdown スライド
+      route: /markdown-slide-deck
+    - label: Markdown → Textile
+      route: /md-to-textile
+    - label: HTML(WinMerge等) → Textile
+      route: /html-to-textile
+    - label: HTML(Qiita等) → Textile
+      route: /qiita-to-textile
+    - label: ログ → Textile
+      route: /log-to-textile
+
+- title: 画像 / メディア
+  items:
     - label: 画像生成
       route: /image/top
-    - label: 画像圧縮
+    - label: 圧縮
       route: /image/compress
-      
-      
-      
+    - label: トリミング / 回転
+      route: /image/crop-rotate
+    - label: 背景透過
+      route: /image/background-remove
+    - label: 結合
+      route: /image/join
+    - label: 透かし
+      route: /image/watermark
+    - label: メタデータ
+      route: /image/metadata
+    - label: バナー作成
+      route: /image/banner
+    - label: アニメ作成 (GIF/WebP)
+      route: /image/gif
+    - label: 画像→PDF
+      route: /image/pdf
+    - label: スポイト
+      route: /image/pick
+    - label: モザイク / ぼかし
+      route: /image/mosaic
+
+- title: プロダクティビティ
+  items:
+    - label: ガントチャート
+      route: /gantt-chart
+    - label: Flashcard SRS
+      route: /flashcard-srs
+
+- title: ユーティリティ
+  items:
+    - label: QRコード生成
+      route: /qr
